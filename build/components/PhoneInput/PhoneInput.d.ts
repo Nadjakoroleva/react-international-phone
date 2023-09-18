@@ -45,6 +45,7 @@ export interface PhoneInputProps extends Omit<UsePhoneInputConfig, 'onChange'>, 
      * @default undefined
      */
     flags?: CountrySelectorProps['flags'];
+    country?: CountryIso2;
     /**
      * @description Callback that calls on phone change
      * @params `phone` - new phone value, `country` - country iso2 value

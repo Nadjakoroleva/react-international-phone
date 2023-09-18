@@ -1,6 +1,6 @@
 import './PhoneInput.style.scss';
 
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { defaultCountries } from '../../data/countryData';
 import { usePhoneInput, UsePhoneInputConfig } from '../../hooks/usePhoneInput';
@@ -69,6 +69,8 @@ export interface PhoneInputProps
    */
   flags?: CountrySelectorProps['flags'];
 
+  country?: CountryIso2;
+
   /**
    * @description Callback that calls on phone change
    * @params `phone` - new phone value, `country` - country iso2 value
@@ -85,6 +87,7 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
   inputProps,
   flags,
   onChange,
+  country: incomeCountry,
 
   style,
   className,
@@ -115,6 +118,12 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
       countries,
     });
   }, [countries, country]);
+
+  useEffect(() => {
+    if (incomeCountry) {
+      setCountry(incomeCountry);
+    }
+  }, [incomeCountry, setCountry]);
 
   const showDialCodePreview =
     usePhoneInputConfig.disableDialCodeAndPrefix &&
