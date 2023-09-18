@@ -1,8 +1,9 @@
 import './PhoneInput.style.scss';
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { defaultCountries } from '../../data/countryData';
+import { useCustomCompareEffect } from '../../hooks/useCompareEffect';
 import { usePhoneInput, UsePhoneInputConfig } from '../../hooks/usePhoneInput';
 import { buildClassNames } from '../../style/buildClassNames';
 import { CountryIso2 } from '../../types';
@@ -119,11 +120,15 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
     });
   }, [countries, country]);
 
-  useEffect(() => {
-    if (incomeCountry) {
-      setCountry(incomeCountry);
-    }
-  }, [incomeCountry, setCountry]);
+  useCustomCompareEffect(
+    () => {
+      if (incomeCountry) {
+        setCountry(incomeCountry);
+      }
+    },
+    [incomeCountry, setCountry],
+    ([countryPrev], [countryCurrent]) => countryPrev === countryCurrent,
+  );
 
   const showDialCodePreview =
     usePhoneInputConfig.disableDialCodeAndPrefix &&
