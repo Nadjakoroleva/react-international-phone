@@ -197,17 +197,17 @@ export const CountrySelectorDropdown: React.FC<
   //   scrollToFocusedCountry();
   // }, [focusedItemIndex, scrollToFocusedCountry]);
 
-  useEffect(() => {
-    if (!listRef.current) return;
+  // useEffect(() => {
+  //   if (!listRef.current) return;
 
-    if (show) {
-      // Autofocus on open dropdown
-      listRef.current.focus();
-    } else {
-      resetFocusedItemIndex();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [show]);
+  //   if (show) {
+  //     // Autofocus on open dropdown
+  //     listRef.current.focus();
+  //   } else {
+  //     resetFocusedItemIndex();
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [show]);
 
   // Update focusedItemIndex on selectedCountry prop change
   useEffect(() => {
