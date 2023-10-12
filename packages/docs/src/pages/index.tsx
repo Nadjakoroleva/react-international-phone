@@ -27,13 +27,7 @@ const HomepageHeader: React.FC = () => {
             'margin-vert--lg',
           )}
         >
-          <PhoneInput
-            defaultCountry="ua"
-            placeholder="Phone number"
-            inputProps={{
-              autoFocus: true,
-            }}
-          />
+          <PhoneInput defaultCountry="ua" placeholder="Phone number" />
         </div>
         <Link
           className="button button--secondary button--lg"
