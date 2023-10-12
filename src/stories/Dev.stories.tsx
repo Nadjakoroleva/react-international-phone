@@ -99,7 +99,7 @@ export const RerenderTest = () => {
         onChange={setPhone}
         defaultCountry="nl"
         placeholder="Test Placeholder"
-        inputProps={{ autoFocus: false }}
+        inputProps={{ autoFocus: true }}
       />
       <button onClick={() => setIsVisible(false)}>Hide</button>
     </div>

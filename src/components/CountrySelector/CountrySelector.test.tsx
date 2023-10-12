@@ -146,7 +146,7 @@ describe('CountrySelector', () => {
       expect(getCountrySelectorDropdown()).not.toBeVisible();
 
       await user.tab();
-      // expect(getCountrySelector()).toHaveFocus();
+      expect(getCountrySelector()).toHaveFocus();
 
       await user.keyboard('{enter}');
       expect(getCountrySelectorDropdown()).toBeVisible();
@@ -157,7 +157,7 @@ describe('CountrySelector', () => {
       expect(getCountrySelectorDropdown()).not.toBeVisible();
 
       await user.tab();
-      // expect(getCountrySelector()).toHaveFocus();
+      expect(getCountrySelector()).toHaveFocus();
 
       await user.keyboard('{arrowUp}');
       expect(getCountrySelectorDropdown()).toBeVisible();
@@ -166,7 +166,7 @@ describe('CountrySelector', () => {
       await user.tab({ shift: true });
 
       rerender(<CountrySelector selectedCountry="us" />);
-      // expect(getCountrySelector()).toHaveFocus();
+      expect(getCountrySelector()).toHaveFocus();
       expect(getCountrySelectorDropdown()).not.toBeVisible();
 
       await user.keyboard('{arrowDown}');

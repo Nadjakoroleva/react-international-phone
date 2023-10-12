@@ -149,7 +149,7 @@ WithAutofocus.argTypes = argTypes;
 WithAutofocus.args = {
   defaultCountry: 'es',
   inputProps: {
-    autoFocus: false,
+    autoFocus: true,
   },
 };
 
