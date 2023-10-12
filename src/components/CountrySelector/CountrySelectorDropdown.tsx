@@ -177,25 +177,25 @@ export const CountrySelectorDropdown: React.FC<
     }
   };
 
-  const scrollToFocusedCountry = useCallback(() => {
-    if (!listRef.current || focusedItemIndex === undefined) return;
+  // const scrollToFocusedCountry = useCallback(() => {
+  //   if (!listRef.current || focusedItemIndex === undefined) return;
 
-    const focusedCountry = parseCountry(countries[focusedItemIndex]).iso2;
-    if (focusedCountry === lastScrolledCountry.current) return;
+  //   const focusedCountry = parseCountry(countries[focusedItemIndex]).iso2;
+  //   if (focusedCountry === lastScrolledCountry.current) return;
 
-    const element = listRef.current.querySelector(
-      `[data-country="${focusedCountry}"]`,
-    );
-    if (!element) return;
-    scrollToChild(listRef.current, element as HTMLElement);
+  //   const element = listRef.current.querySelector(
+  //     `[data-country="${focusedCountry}"]`,
+  //   );
+  //   if (!element) return;
+  //   scrollToChild(listRef.current, element as HTMLElement);
 
-    lastScrolledCountry.current = focusedCountry;
-  }, [focusedItemIndex, countries]);
+  //   lastScrolledCountry.current = focusedCountry;
+  // }, [focusedItemIndex, countries]);
 
-  // Scroll to focused item on change
-  useEffect(() => {
-    scrollToFocusedCountry();
-  }, [focusedItemIndex, scrollToFocusedCountry]);
+  // // Scroll to focused item on change
+  // useEffect(() => {
+  //   scrollToFocusedCountry();
+  // }, [focusedItemIndex, scrollToFocusedCountry]);
 
   useEffect(() => {
     if (!listRef.current) return;
