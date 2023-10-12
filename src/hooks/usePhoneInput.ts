@@ -431,11 +431,6 @@ export const usePhoneInput = ({
       phone: newPhoneValue,
       country: newCountry.iso2,
     });
-
-    // Next tick is used to support UI libraries (had an issue with MUI)
-    Promise.resolve().then(() => {
-      inputRef.current?.focus();
-    });
   };
 
   const [initialized, setInitialized] = useState(false);
