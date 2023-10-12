@@ -29,6 +29,7 @@ const defaultCountryArgType = {
 
 const argTypes = {
   defaultCountry: defaultCountryArgType,
+  country: defaultCountryArgType,
 };
 
 export const Default = Template.bind({});
@@ -50,6 +51,7 @@ Default.args = {
   inputStyle: {},
   countrySelectorStyleProps: {},
   dialCodePreviewStyleProps: {},
+  country: undefined,
 };
 
 export const WithInitialValue = Template.bind({});
